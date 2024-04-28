@@ -1,0 +1,32 @@
+/*function paymentStart(e) {
+  e.preventDefault();
+  alert("hi");
+  console.log("payment started");
+  let amount = $("#payment").val();
+  console.log(amount);
+}*/
+
+document.querySelector(".pay").addEventListener("click", function () {
+  console.log("function is working");
+  const amount = document.querySelector("#payment").value;
+  console.log(amount);
+  if (amount == "" || amount == null) {
+    alert("amount is required");
+  }
+
+  $.ajax({
+    url: "createOrder",
+    data: { amount: amount },
+    contentType: "application/json",
+    type: "POST",
+    dataType: "json",
+    success: function (response) {
+      console.log(response);
+      //
+    },
+    error: function (error) {
+      console.log("Something Went Wrong");
+      alert("error");
+    },
+  });
+});

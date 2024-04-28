@@ -1,0 +1,46 @@
+package com.utkarshhardwareandplywood.springboot.website.controller;
+
+import java.util.Map;
+
+import org.json.JSONObject;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.razorpay.Order;
+import com.razorpay.RazorpayClient;
+import com.razorpay.RazorpayException;
+import com.utkarshhardwareandplywood.springboot.website.models.Amount;
+
+@RestController
+public class PaymentController {
+
+	@PostMapping("/createOrder")
+	public String createOrder(@ModelAttribute("amount") Amount amount, @RequestBody Map<String, Object> data)
+			throws RazorpayException {
+
+		System.out.println(data);
+
+		// ModelAndView modelAndView = new ModelAndView("payment");
+
+		int amt = amount.getAmount();
+		System.out.println(amt);
+		RazorpayClient client = new RazorpayClient("rzp_test_6zgHqKyqNjr12S", "kVgLaw5q1mJSXF4NnEP2Lx5q");
+
+		JSONObject ob = new JSONObject();
+		ob.put("amount", amt * 100);
+		ob.put("currency", "INR");
+		ob.put("receipt", "txn_123444");
+
+		Order order = client.orders.create(ob);
+		System.out.println(order);
+
+		// modelAndView.addObject("response", order);
+
+		return "done" ;
+	}
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.message {
+			text-align: center;
+			margin-bottom: 20px;
+			background-color: #007bff;
+			color: #fff;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		form {
+					max-width: 400px;
+					margin: 20px auto;
+					padding: 20px;
+					border: 1px solid #ccc;
+					border-radius: 5px;
+					background-color: #f9f9f9;
+				}
+		
+				form input[type="text"],
+				form input[type="email"] {
+					width: 100%;
+					padding: 10px;
+					margin-bottom: 10px;
+					border: 1px solid #ccc;
+					border-radius: 3px;
+					box-sizing: border-box;
+				}
+		
+				form input[type="submit"] {
+					width: 100%;
+					padding: 10px;
+					border: none;
+					border-radius: 3px;
+					background-color: #007bff;
+					color: #fff;
+					cursor: pointer;
+				}
+		
+				form input[type="submit"]:hover {
+					background-color: #0056b3;
+				}
+	</style>
+</head>
+
+<body>
+	<div class="message">
+		<p>
+		<h1>Welcome to the amount page!</h1>
+		</p>
+	</div>
+    
+	<form>
+	<div>
+		<h3>Amount:</h3>
+		<input id="payment" type="text" name="amount" required>
+	</div>
+	<div>
+		<button class="pay"> pay </button>
+	</div>
+	</form>
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script th:src="@{/js/payment.js}"></script>
+
+</html>

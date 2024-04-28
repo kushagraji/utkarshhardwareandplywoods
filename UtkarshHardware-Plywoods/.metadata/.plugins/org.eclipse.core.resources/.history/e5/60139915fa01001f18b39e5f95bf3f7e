@@ -1,0 +1,13 @@
+/*function paymentStart(e) {
+  e.preventDefault();
+  alert("hi");
+  console.log("payment started");
+  let amount = $("#payment").val();
+  console.log(amount);
+}*/
+
+document.querySelector(".pay").addEventListener("click", function () {
+  console.log("function is working");
+  let amount = document.querySelector("#payment").value();
+  console.log("kushagra");
+});

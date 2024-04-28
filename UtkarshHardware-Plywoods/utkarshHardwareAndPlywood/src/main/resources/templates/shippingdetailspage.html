@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+form {
+	max-width: 400px;
+	margin: 20px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+}
+
+form input[type="text"], form input[type="email"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+
+form input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 3px;
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+	background-color: #0056b3;
+}
+
+ .message {
+             text-align: center;
+            margin-bottom: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div class="message" >
+		<p><h1>Welcome to the shippingdetails page!</h1></p>
+	</div>
+
+	<form action="registerDetails" method="post">
+		<div>
+			<label for="useraddress">address:</label> <input type="text" name="address" required>
+		</div>
+		<div>
+			<label for="userpin">Pin:</label> <input type="text" name="pin"
+				required>
+		</div>
+		<div>
+			<label for="userphoneno">PhoneNo.:</label> <input type="text" name="phoneno"
+				required>
+		</div>
+		<div>
+			<input type="submit" value="OK">
+		</div>
+	</form>
+
+</body>
+</html>
